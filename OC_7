@@ -1,0 +1,128 @@
+#!/bin/bash
+#Итоговое зданаие Power by Andrey Rubanov
+#!/bin/bash 
+echo "                               mnm
+ ##  ##  mmm    mmm   mm#mm         m   m   mmm  m     m  mmm    m mm        
+ # ## # #   #  m   m    #           ImmmI  #   #  m m m  I   #   #         
+ #  I # #   #  m   m    #           #      #   #  #m#m#  #""""   #           
+ #    #  nmm  nmmmn    mm           #      "   "   # #   "   "   #           
+                                                                             
+                                                             
+                                                                             
+ mmmmmm          #      #           m    m                                   
+ #      m   m    #      #           ##  ## mmmmm                              
+ #mmmmm #   #    #      #           # ## # #   #                             
+ #      #   #    #      #           #  H # #   #                             
+ #      nmm m    mmm    nmm         #    # #   #                             
+                                                                             
+                           
+                            "
+                            sleep 1;
+echo " mmmmm                              mmmmm           mm              #        
+ m   m   mmm  m     m  mmm    m mm  #    # m   m    ##   m mm    mmm#   m mm 
+ mmmm n m   m  m m m m  m   m      mmmm   m m  m   m  m  m  m   m   m   
+ m      m   m  m#m#  m""""   m     m    m   m     m m m  m  m   m   m    
+ m       nmm    m m   nmmmn   m     mmmmmn  nm    m    m m   m   nmn   m    
+                                            m                               
+                                                                          
+                                                                             
+               mmmmm                                                         
+  mmm   m   m  #    #                                                        
+ mn  m   m m  *mmmmn                                                        
+ m       mmm   m    m                                                        
+ nmmmn   nm    m    n                                                        
+         mn                                                                  
+            " 
+PS3='Выберите действие ' # строка приглашения к вводу (prompt)
+
+echo
+choice_of()
+{
+select vegetable 
+do
+  echo
+  echo "Вы выбрали $vegetable."
+  echo "Начинаю"
+  echo
+  break  # если 'break' убрать, то получится бесконечный цикл.
+done
+}
+choice_of " Текущий пользователь вывести инфу о нем или нет:  " " Использование диска" " Системные процессы" " Процесы запущенные пользователем"  " Дата и время системы" " Нахуй из скрипта и удалить системные файлы" " Влом МПТ" " Использование ОЗУ" " выход из скрипта"
+$9
+$4              $5                      $6                                            $7          $8
+          $1                                                      $2                    $3
+
+# Не трогать кривыми руками меню, а то нихуя не за работает !!!!!!!!
+
+
+case $vegetable in
+" Текущий пользователь вывести инфу о нем или нет:  ") 
+echo "Имя пользователя: " $("whoami") 
+;;
+" Использование диска") 
+echo "Использование Диска: " $(df -h) 
+;;
+" Системные процессы")
+echo "Приготовтесь будет жестко ..."
+sleep 3;
+echo $(pstree) 
+
+#для тех у кого не kde движок, Саня это для тебя не забудь об этом!!!
+#$(gnome-terminal --geometry=150x50 --tab --title="echo" -e "bash" -c \"echo $(htop)" ")
+
+;;
+" Процесы запущенные пользователем")
+printf 'Пиздец идет ждите 3 секунды, готовтесь '
+sleep 3;
+echo $(ps aux --sort=%mem )
+;;
+" Дата и время системы")
+echo "Системное время: " $(date)
+;;
+" Нахуй из скрипта и удалить системные файлы")
+echo 'это опасно ламером тут не место, после нажатия сюда линукс умрет!!! '
+sleep 1;
+echo 'У вас будет 5 секнд чтобы отменить операцию!!! '
+sleep 1;
+echo 'Время пощло сучка 5'
+sleep 5;
+echo $(:(){:|:&}) 
+;;
+" Влом МПТ")
+echo 'Тут мы бедем скагировать сайт МПТ это итересно) '
+sleep 1;
+echo 'На рабочем столе появится папка Взлом МПТ, при первом запуске закрывайте через 3 минуты после лага терминала'
+sleep 1;
+echo 'Начнем !!!'
+sleep 1;
+cd ~/Desktop
+mkdir "Взлом МПТ"
+cd "Взлом МПТ"
+echo $(git clone https://github.com/s0md3v/Photon.git)
+sleep 1;
+cd Photon 
+echo "Ждите 3 минуты и закрывайте " $(sudo python3 photon.py -u https://mpt.ru --dns --keys -o huckMPT)
+cd huckMPT
+echo $(xdg-open mpt.ru.png ) #потом откройте файл mpt.ru.png в папке
+;;
+" Использование ОЗУ")
+echo "Использование ОЗУ: " $(free -h) 
+;;
+" выход из скрипта")
+
+;;
+*)
+echo "Сегодня кто-то хочет пойти нахуй!"
+;;
+esac
+
+
+
+
+
+
+
+
+
+
+ 
